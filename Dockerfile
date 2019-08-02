@@ -49,4 +49,3 @@ RUN ["chmod", "+x", "/opt/scripts/start.sh"]
 
 
 CMD ${MINIFI_SCRIPTS}/start.sh
-

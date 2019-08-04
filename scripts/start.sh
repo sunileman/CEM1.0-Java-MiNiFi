@@ -15,9 +15,11 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
+sh $MINIFI_SCRIPTS/config.sh
+
 # Continuously provide logs so that 'docker logs' can    produce them
-tail -F "${MINIFI_HOME}/logs/minifi-app.log" &
 "${MINIFI_HOME}/bin/minifi.sh" run &
+tail -F "${MINIFI_HOME}/logs/minifi-app.log" &
 minifi_pid="$!"
 
 trap "echo Received trapped signal, beginning shutdown...;" KILL TERM HUP INT EXIT;

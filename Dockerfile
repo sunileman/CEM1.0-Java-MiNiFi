@@ -45,7 +45,8 @@ RUN sed -i -e "s|^#nifi.c2.agent.heartbeat.period=.*$|nifi.c2.agent.heartbeat.pe
 
 
 
+RUN ["chmod", "+x", "/opt/scripts/config.sh"]
 RUN ["chmod", "+x", "/opt/scripts/start.sh"]
 
-
+CMD ${MINIFI_SCRIPTS}/config.sh
 CMD ${MINIFI_SCRIPTS}/start.sh

@@ -23,7 +23,7 @@
 #export properties_file='/opt/c2/c2-1.0.0-SNAPSHOT/conf/c2.properties'
 
 # Nothing to do, all ENV overrides are applied by the application
-wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-azure-nar-1.8.0.3.3.1.0-10.nar
-wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-standard-services-api-nar-1.8.0.3.3.1.0-10.nar
-wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-http-context-map-nar-1.8.0.3.3.1.0-10.nar
+#wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-azure-nar-1.8.0.3.3.1.0-10.nar
+#wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-standard-services-api-nar-1.8.0.3.3.1.0-10.nar
+#wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-http-context-map-nar-1.8.0.3.3.1.0-10.nar
 

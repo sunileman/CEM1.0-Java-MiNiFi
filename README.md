@@ -10,4 +10,4 @@ This docker instance will launch a EFM UI
 To supply class name as argument
   * `docker build --build-arg MINIFI_AGENT_CLASS=sunmanClass --no-cache -t minifi-java .`
 3.  Run the image
-  * `docker run --name java-minifi`
+  * `docker run java-minifi`

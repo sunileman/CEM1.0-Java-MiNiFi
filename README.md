@@ -11,3 +11,6 @@ To supply class name as argument
   * `docker build --build-arg MINIFI_AGENT_CLASS=sunmanClass --no-cache -t minifi-java .`
 3.  Run the image
   * `docker run java-minifi`
+<br><br>
+### Add Nars<br>
+Place Nars in a shared location (like s3) and update config.sh.  At run time nars will be pulled into the lib directory

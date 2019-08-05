@@ -14,6 +14,7 @@ ENV MINIFI_BASE_DIR /opt/minifi
 ENV MINIFI_SCRIPTS /opt/scripts
 ENV MINIFI_HOME $MINIFI_BASE_DIR/minifi-$MINIFI_VERSION
 
+RUN apk add --no-cache bash
 
 # Setup MiNiFi user
 RUN addgroup -g $GID minifi || groupmod -n minifi `getent group $GID | cut -d: -f1`
@@ -42,8 +43,6 @@ RUN sed -i -e "s|^#nifi.c2.rest.url=.*$|nifi.c2.rest.url=$NIFI_C2_REST_URL|" $MI
 RUN sed -i -e "s|^#nifi.c2.rest.url.ack=.*$|nifi.c2.rest.url.ack=$NIFI_C2_REST_URL_ACK|" $MINIFI_HOME'/conf/bootstrap.conf'
 RUN sed -i -e "s|^#nifi.c2.agent.heartbeat.period=.*$|nifi.c2.agent.heartbeat.period=1000|" $MINIFI_HOME'/conf/bootstrap.conf'
 
-
-RUN apk add --no-cache bash
 
 RUN ["chmod", "+x", "/opt/scripts/config.sh"]
 RUN ["chmod", "+x", "/opt/scripts/start.sh"]

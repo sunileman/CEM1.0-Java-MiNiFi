@@ -23,7 +23,12 @@
 #export properties_file='/opt/c2/c2-1.0.0-SNAPSHOT/conf/c2.properties'
 
 # Nothing to do, all ENV overrides are applied by the application
-#wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-azure-nar-1.8.0.3.3.1.0-10.nar
-#wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-standard-services-api-nar-1.8.0.3.3.1.0-10.nar
-#wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-http-context-map-nar-1.8.0.3.3.1.0-10.nar
+wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-azure-nar-1.8.0.3.3.1.0-10.nar
+wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-standard-services-api-nar-1.8.0.3.3.1.0-10.nar
+wget -P ${MINIFI_HOME}/lib/ https://sunileman1.s3-us-west-2.amazonaws.com/minifi_nars/nifi-http-context-map-nar-1.8.0.3.3.1.0-10.nar
 
+sed -i -e "s|^#nifi.c2.enable=.*$|nifi.c2.enable=$NIFI_C2_ENABLE|" $MINIFI_HOME'/conf/bootstrap.conf'
+sed -i -e "s|^#nifi.c2.agent.class=.*$|nifi.c2.agent.class=$MINIFI_AGENT_CLASS|" $MINIFI_HOME'/conf/bootstrap.conf'
+sed -i -e "s|^#nifi.c2.rest.url=.*$|nifi.c2.rest.url=$NIFI_C2_REST_URL|" $MINIFI_HOME'/conf/bootstrap.conf'
+sed -i -e "s|^#nifi.c2.rest.url.ack=.*$|nifi.c2.rest.url.ack=$NIFI_C2_REST_URL_ACK|" $MINIFI_HOME'/conf/bootstrap.conf'
+sed -i -e "s|^#nifi.c2.agent.heartbeat.period=.*$|nifi.c2.agent.heartbeat.period=1000|" $MINIFI_HOME'/conf/bootstrap.conf'

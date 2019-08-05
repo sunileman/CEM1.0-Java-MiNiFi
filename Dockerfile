@@ -43,7 +43,7 @@ RUN sed -i -e "s|^#nifi.c2.rest.url.ack=.*$|nifi.c2.rest.url.ack=$NIFI_C2_REST_U
 RUN sed -i -e "s|^#nifi.c2.agent.heartbeat.period=.*$|nifi.c2.agent.heartbeat.period=1000|" $MINIFI_HOME'/conf/bootstrap.conf'
 
 
-
+RUN apk add --no-cache bash
 
 RUN ["chmod", "+x", "/opt/scripts/config.sh"]
 RUN ["chmod", "+x", "/opt/scripts/start.sh"]

@@ -31,7 +31,6 @@ ADD ./scripts $MINIFI_SCRIPTS
 
 ADD ./target/minifi-*-bin.tar.gz $MINIFI_BASE_DIR
 
-RUN ls $MINIFI_BASE_DIR
 
 RUN chown -R minifi:minifi $MINIFI_BASE_DIR
 RUN chown -R minifi:minifi $MINIFI_SCRIPTS

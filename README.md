@@ -2,7 +2,7 @@
 
 ## Docker Instance for Java MiNiFi which connects to Edge Flow Manager UI
 
-This docker instance will launch a EFM UI
+This docker instance will build a minifi instance
 
 1.  Git Clone
 2.  Build a docker image

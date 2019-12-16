@@ -27,10 +27,9 @@ ADD ./scripts $MINIFI_SCRIPTS
 
 RUN wget https://sunileman1.s3-us-west-2.amazonaws.com/CEM/JAVA/minifi-$MINIFI_VERSION-bin.tar.gz -P $MINIFI_BASE_DIR
 
-run tar -xzf $MINIFI_BASE_DIR/minifi-$MINIFI_VERSION-bin.tar.gz
+run tar -xzf $MINIFI_BASE_DIR/minifi-$MINIFI_VERSION-bin.tar.gz -C $MINIFI_BASE_DIR
 
-
-#ADD ./target/minifi-*-bin.tar.gz $MINIFI_BASE_DIR
+run rm -f $MINIFI_BASE_DIR/minifi-$MINIFI_VERSION-bin.tar.gz
 
 
 RUN chown -R minifi:minifi $MINIFI_BASE_DIR
